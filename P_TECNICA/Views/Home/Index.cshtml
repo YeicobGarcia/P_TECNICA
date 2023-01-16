@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex justify-content-center h-100">
+<div class="card">
+	<div class="card-header">
+			<h3 class="text-warning fw-bold">Log In</h3>
+		<div class="d-flex justify-content-end social_icon">
+				<span><i class="fab fa-creative-commons-by"></i></span>
+		</div>
+	</div>
+	<div class="card-body">
+		<form action="@Url.Action("Login","Acceso")" method="post">
+
+				<div class="input-group form-group pb-2 mt-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-user"></i></span>
+				</div>
+				<input type="text" name="Username" class="form-control" placeholder="Ingrese su Usuario">
+			</div>
+
+				<div class="input-group form-group pt-2">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><i class="fas fa-key"></i></span>
+				</div>
+				<input type="password" name="Pass" class="form-control" placeholder="Ingrese su Contraseña">
+			</div>
+
+			<div class="form-group">
+					@if (ViewData["Mensaje"] != null)
+					{
+						<div class="alert alert-danger float-left" role="alert">
+							@ViewData["Mensaje"]
+						</div>
+					}
+				<input type="submit" value="Entrar" class="btn float-right login_btn align-content-center align-align-items-center">
+			</div>
+
+		</form>
+	</div>
+	<div class="card-footer">
+		<div class="d-flex justify-content-center links">
+			¿Aun no tienes una cuenta? <a href ="@Url.Action("Privacy","Home")">Registrate</a>
+		</div>
+		<div class="d-flex justify-content-center">
+			<a href="#">¿Olvidaste tu Contraseña?</a>
+		</div>
+	</div>
+</div>
+</div>

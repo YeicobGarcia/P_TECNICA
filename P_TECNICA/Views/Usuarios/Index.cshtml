@@ -1,0 +1,77 @@
+﻿        @model IEnumerable<P_TECNICA.Models.Usuario>
+
+        @{
+            ViewData["Title"] = "Index";
+        }
+        <!--
+        <div class="card-responsive text-white border-light d-flex justify-content-center align-items-center">
+            <h1>Index</h1>
+                <p>
+                <a asp-action="Create" class="btn btn-success align-content-end">Create Nuevo Usuario</a>
+                </p>
+        -->
+<div class="card-responsive bg-gradient">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2 text-white">LISTADO DE USUARIOS</h1>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <p>
+                                <a asp-action="Create" class="btn btn-success align-content-end">Create Nuevo Usuario</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+           <div class="card-body">
+
+                <div class="bg-gradient rounded h-100 p-0">
+                    <div class="table-responsive">
+                        <table class="table">
+            
+                             <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Username)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Nombre)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Fnacimiento)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Email)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                             </thead>
+
+                    <tbody class="text-white">
+        @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Username)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fnacimiento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.IdUsuarios">Edit</a> |
+                                <a asp-action="Details" class="btn btn-light" asp-route-id="@item.IdUsuarios">Details</a> |
+                                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdUsuarios">Delete</a>
+                        </td>
+                    </tr>
+        }
+            </tbody>
+        </table>
+        </div>
+                </div>
+        </div>
+        </div>

@@ -1,0 +1,58 @@
+﻿@model P_TECNICA.Models.Usuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card-responsive bg-gradient ">
+ 
+    <div class="card-header">
+        <h1 class="text-success ">@Html.DisplayFor(model => model.Username)</h1>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button>
+                        <a asp-action="Index" class="btn-outline-primary align-content-end">Regresar</a>
+                    </button>
+            </div>
+    </div>
+    <div class="card-body">
+        <div class="bg-gradient rounded h-100 p-0 text-white">
+    <h4>Información</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Username)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Username)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pass)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Fnacimiento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Fnacimiento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+    </dl>
+            <div class="card-footer">
+                <a asp-action="Edit" class="btn btn-success align-content-center"  asp-route-id="@Model?.IdUsuarios">Editar</a>
+            </div>
+</div>
+    </div>
+</div>

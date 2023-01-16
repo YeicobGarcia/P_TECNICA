@@ -1,0 +1,103 @@
+﻿@model P_TECNICA.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card-responsive bg-gradient">
+    <form asp-action="Create">
+    <div class="card-header">
+
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2 text-white">CREAR USUARIO</h1>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button>
+                        <a asp-action="Index" class="btn-outline-primary align-content-end">Regresar</a>
+                    </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="bg-gradient rounded h-100 p-0">
+            <div class="row">
+                 <div class="col-4 pb-2 pt-3">
+                     <table class="table table-striped-columns">
+                        <tbody>
+                            
+                            <tr>
+                                <td colspan="2">
+                                    <label asp-for="Username" class="control-label"></label>
+                                    </td>
+                                <th scope="row"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label asp-for="Nombre" class="control-label"></label>
+                                </b></td>
+                                <th scope="row"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label asp-for="Fnacimiento" class="control-label"></label>
+                                </td>
+                                <th scope="row"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label asp-for="Email" class="control-label"></label>
+                                </td>
+                                <th scope="row"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                <div class="col-6 pb-2 pt-3">
+                    <table class="table table-striped-columns">
+                        <tbody>
+
+                            <tr>
+                                <td colspan="2">
+                                    <input asp-for="Username" class="form-control" />
+                                    <span asp-validation-for="Username" class="text-danger"></span>
+                                </td>
+                                <th scope="row"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input asp-for="Nombre" class="form-control" />
+                                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                                    </b>
+                                </td>
+                                <th scope="row"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input asp-for="Fnacimiento" class="form-control" />
+                                    <span asp-validation-for="Fnacimiento" class="text-danger"></span>
+                                </td>
+                                <th scope="row"></th>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input asp-for="Email" class="form-control" />
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </td>
+                                <th scope="row"></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="card-footer align-items-center">
+            <input type="submit" value="Crear" class="btn btn-success align-content-center" />
+        </div>
+</form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

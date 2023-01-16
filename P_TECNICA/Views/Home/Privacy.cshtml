@@ -1,0 +1,79 @@
+﻿@{
+	ViewData["Title"] = "Registro";
+}
+
+<div class="d-flex justify-content-center h-100">
+	<div id="cardReg" class="card">
+		<div class="card-header">
+			<h3 class="text-warning fw-bold">Registro</h3>
+			<div class="d-flex justify-content-end social_icon">
+				<span><i class="fab fa-odnoklassniki-square"></i></span>
+			</div>
+		</div>
+		<div class="card-body">
+			<form action="@Url.Action("Registrar","Acceso")" method="post">
+
+				<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-universal-access"></i></span>
+					</div>
+					<input type="text" name="Nombre" class="form-control" placeholder="Ingrese un Nombre y Apellido">
+				</div>
+
+				<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fab fa-telegram"></i></span>
+					</div>
+					<input type="text" name="Email" class="form-control" placeholder="Ingrese su Correo Personal">
+				</div>
+
+				<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fab fa-readme"></i></span>
+					</div>
+					<input type="datetime" name="Fnacimiento" class="form-control" placeholder="Ingrese su Fecha de Nacimiento">
+				</div>
+
+				<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-user"></i></span>
+					</div>
+					<input type="text" name="Username" class="form-control" placeholder="Ingrese su nombre de Usuario">
+				</div>
+
+				<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-key"></i></span>
+					</div>
+					<input type="password" name="Pass" class="form-control" placeholder="Ingrese una Contraseña">
+				</div>
+
+				<div class="input-group form-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-key"></i></span>
+					</div>
+					<input type="password" name="ConfirmarClave" class="form-control" placeholder="Repita esa Contraseña">
+				</div>
+
+				<div class="row align-items-center remember">
+					<input type="checkbox">Recordarme
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Registrar" class="btn float-right login_btn">
+				</div>
+
+				@if (ViewData["Mensaje"] != null)
+				{
+						<div class="alert alert-danger" role="alert">
+						@ViewData["Mensaje"]
+						</div>
+				}
+			</form>
+		</div>
+		<div class="card-footer">
+			<div class="d-flex justify-content-center links">
+				Ya tengo una cuenta <a href="@Url.Action("Index", "Home")">Iniciar Sesion</a>
+			</div>
+		</div>
+	</div>
+</div>
