@@ -1,31 +1,26 @@
-﻿@model P_TECNICA.Models.Usuario
+﻿@model P_TECNICA.Models.Empleado
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Create?e";
 }
 
-
-
-<div class="card-responsive bg-gradient">
-    <form asp-action="Edit">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdUsuarios" />
+<div class="card-fluid bg-gradient" style="width: 40rem;">
+    <form asp-action="Create_e">
         <div class="card-header">
 
             <div class="row">
 
                 <div class="col-auto">
-                    <h1 class="text-warning fw-bold">EDITAR USUARIO</h1>
+                    <h1 class="text-white ">CREAR EMPLEADO</h1>
                 </div>
                 <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
                     <div class="d-md-flex justify-content-center  align-items-center text-center">
                         <button>
-                            <a asp-action="Index" class="btn-outline-primary align-content-end">Regresar</a>
+                            <a asp-action="Index" class="btn-outline-primary">Regresar</a>
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
 
         <div class="card-body">
             <div class="bg-gradient rounded h-100 p-0">
@@ -36,63 +31,60 @@
 
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Username" class="control-label"></label>
+                                        <strong>Nombre y Apellido</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Nombre" class="control-label"></label>
+                                        <strong>DPI</strong>
                                         </b>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Fnacimiento" class="control-label"></label>
+                                        <strong>Hijos</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Email" class="control-label"></label>
+                                        <strong>Salario Base</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-6 pb-2 pt-3">
+                    <div class="col-6 pb-2 pt-3 container-fluid">
                         <table class="table table-striped-columns">
                             <tbody>
 
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Username" class="form-control" />
-                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                        <input asp-for="NombreE" class="form-control" placeholder="New"/>
+                                        <span asp-validation-for="NombreE" class="text-danger"></span>
                                     </td>
-                                    <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Nombre" class="form-control" />
-                                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                                            <input asp-for="DPI" class="form-control " placeholder="New" />
+                                        <span asp-validation-for="DPI" class="text-danger"></span>
+                                        </b>
                                     </td>
-                                    <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Fnacimiento" class="form-control" />
-                                        <span asp-validation-for="Fnacimiento" class="text-danger"></span>
+                                            <input asp-for="Hijos" class="form-control" placeholder="New" />
+                                        <span asp-validation-for="Hijos" class="text-danger"></span>
                                     </td>
-                                    <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Email" class="form-control" />
-                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                            <input asp-for="SalarioB" class="form-control" placeholder="New" />
+                                        <span asp-validation-for="SalarioB" class="text-danger"></span>
                                     </td>
-                                    <th scope="row"></th>
                                 </tr>
                             </tbody>
                         </table>
@@ -100,12 +92,14 @@
                 </div>
             </div>
         </div>
-        <div class="card-footer align-items-center">
-            <input type="submit" value="Guardar" class="btn btn-success align-content-center" />
+        <div class="card-footer text-center align-items-center">
+            <input type="submit" value="Crear nuevo empleado" class="btn btn-success align-content-center" />
         </div>
     </form>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

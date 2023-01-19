@@ -1,21 +1,21 @@
-﻿@model P_TECNICA.Models.Usuario
+﻿@model P_TECNICA.Models.Empleado
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit_e";
 }
 
 
 
 <div class="card-responsive bg-gradient">
-    <form asp-action="Edit">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdUsuarios" />
+    <form asp-action="Edit_e">
+        <div asp-validation-summary="ModelOnly" class="text-warning"></div>
+        <input type="hidden" asp-for="idEmpleados" />
         <div class="card-header">
 
             <div class="row">
 
                 <div class="col-auto">
-                    <h1 class="text-warning fw-bold">EDITAR USUARIO</h1>
+                    <h1 class="text-warning fw-bold">EDITAR EMPLEADO</h1>
                 </div>
                 <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
                     <div class="d-md-flex justify-content-center  align-items-center text-center">
@@ -24,7 +24,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+             </div>
         </div>
 
         <div class="card-body">
@@ -34,28 +34,28 @@
                         <table class="table table-striped-columns">
                             <tbody>
 
+                                <div class="col"></div>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Username" class="control-label"></label>
+                                        <strong>Nombre</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Nombre" class="control-label"></label>
-                                        </b>
+                                        <strong>DPI</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Fnacimiento" class="control-label"></label>
+                                        <strong>#Hijos</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <label asp-for="Email" class="control-label"></label>
+                                        <strong>Salario Base</strong>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
@@ -68,29 +68,29 @@
 
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Username" class="form-control" />
-                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                        <input asp-for="NombreE" class="form-control" />
+                                        <span asp-validation-for="NombreE" class="text-danger"></span>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Nombre" class="form-control" />
-                                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                                        <input asp-for="DPI" class="form-control" />
+                                        <span asp-validation-for="DPI" class="text-danger"></span>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Fnacimiento" class="form-control" />
-                                        <span asp-validation-for="Fnacimiento" class="text-danger"></span>
+                                        <input asp-for="Hijos" class="form-control" />
+                                        <span asp-validation-for="Hijos" class="text-danger"></span>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <input asp-for="Email" class="form-control" />
-                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                        <input asp-for="SalarioB" class="form-control" />
+                                        <span asp-validation-for="SalarioB" class="text-danger"></span>
                                     </td>
                                     <th scope="row"></th>
                                 </tr>
@@ -101,11 +101,13 @@
             </div>
         </div>
         <div class="card-footer align-items-center">
-            <input type="submit" value="Guardar" class="btn btn-success align-content-center" />
+            <input type="submit" value="Guardar Cambios" class="btn btn-success align-content-center" />
         </div>
     </form>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

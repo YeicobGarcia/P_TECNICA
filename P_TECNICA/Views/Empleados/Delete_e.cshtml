@@ -1,0 +1,70 @@
+﻿@model P_TECNICA.Models.Empleado
+
+@{
+    ViewData["Title"] = "Delete_e";
+}
+<div class="card-responsive bg-gradient ">
+
+    <div class="card-header">
+        <div class="row">
+
+            <div class="col-auto">
+                <h1 class="text-danger ">ELIMINAR EMPLEADO</h1>
+                <h3>¿Desea eliminar este Empleado? </h3>
+                <h4> No podra revertir estos cambios</h4>
+            </div>
+            <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                <div class="d-md-flex justify-content-center  align-items-center text-center">
+                    <button>
+                        <a asp-action="Index" class="btn-outline-primary align-content-end">Regresar</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="card-body">
+        <div class="bg-gradient rounded h-100 p-0 text-white">
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    <strong>Nombre Empleado</strong>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.NombreE)
+                </dd>
+                <hr />
+                <dt class="col-sm-2">
+                    <strong>DPI</strong>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DPI)
+                </dd>
+                <hr />
+                <dt class="col-sm-2">
+                    <strong>No. de Hijos</strong>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Hijos)
+                </dd>
+                <hr />
+                <dt class="col-sm-2">
+                    <strong>Salario Base</strong>
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.SalarioB)
+                </dd>
+            </dl>
+            <div class="card-footer">
+                <form asp-action="Delete_e">
+                    <input type="hidden" asp-for="idEmpleados" />
+                    <input type="submit" value="Eliminar Empleado" class="btn btn-danger" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,7 +1,7 @@
 ﻿        @model IEnumerable<P_TECNICA.Models.Usuario>
 
         @{
-            ViewData["Title"] = "Index";
+            ViewData["Title"] = "Users";
         }
         <!--
         <div class="card-responsive text-white border-light d-flex justify-content-center align-items-center">
@@ -20,6 +20,12 @@
                                 <a asp-action="Create" class="btn btn-success align-content-end">Create Nuevo Usuario</a>
                             </p>
                         </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <p>
+                                <a href="@Url.Action("Index","Empleados")" class="btn btn-danger align-content-end">Create Nuevo Usuario</a>
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -32,16 +38,19 @@
                              <thead>
                                 <tr>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Username)
+                                        <strong>Id</strong>
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Nombre)
+                                        <strong>Nombre de Usuario</strong>
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Fnacimiento)
+                                        <strong>Nombre</strong>
                                     </th>
                                     <th>
-                                        @Html.DisplayNameFor(model => model.Email)
+                                        <strong>Fecha de Nacimiento</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Correo</strong>
                                     </th>
                                     <th></th>
                                 </tr>
@@ -50,6 +59,9 @@
                     <tbody class="text-white">
         @foreach (var item in Model) {
                     <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IdUsuarios)
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Username)
                         </td>

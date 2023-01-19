@@ -1,0 +1,91 @@
+﻿
+@model IEnumerable<P_TECNICA.Models.Empleado>
+
+@{
+    ViewData["Title"] = "Empleado";
+}
+
+<div class="card-responsive bg-gradient">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2 text-white">REGISTRO DE EMPLEADOS</h1>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <p>
+                                <a asp-action="Create_e" class="btn btn-success align-content-end">Crear Nuevo Empleado</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+           <div class="card-body">
+               
+                <div class="bg-gradient rounded h-100 p-0">
+                    <div class="table-responsive">
+                        <table class="table">
+            
+                             <thead >
+                                <tr>
+                                    <th>
+                                <strong>Id</strong>
+                                    </th>
+                                    <th>
+                                <strong>Nombre</strong>
+                                    </th>
+                                    <th>
+                                <strong>DPI</strong>
+                                    </th>
+                                    <th>
+                                <strong>#Hijos</strong>
+                                    </th>
+                                     <th>
+                                <strong>Salario Base</strong>
+                                    </th>
+                                    <th>
+                                <strong>Registrado por</strong>
+                                    </th>
+                                    <th>
+                                <strong>Fecha de Registro</strong>
+                                    </th>
+                                    <th></th>
+                                </tr>
+                             </thead>
+
+                    <tbody class="text-white">
+       @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.idEmpleados)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NombreE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DPI)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Hijos)
+                        </td>
+                        <td>
+                            Q.@Html.DisplayFor(modelItem => item.SalarioB)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.userUdpdate)
+                        </td>
+                         <td>
+                            @Html.DisplayFor(modelItem => item.fechaUpdate)
+                        </td>
+            
+                        <td>
+                                <a asp-action="Edit_e" class="btn btn-warning" asp-route-id="@item.idEmpleados">Edit</a> |
+                                <a asp-action="Details_E" class="btn btn-light" asp-route-id="@item.idEmpleados">Details</a> |
+                                <a asp-action="Delete_e" class="btn btn-danger" asp-route-id="@item.idEmpleados">Delete</a>
+                        </td>
+                    </tr>
+        }
+            </tbody>
+        </table>
+        </div>
+                </div>
+        </div>
+        </div>

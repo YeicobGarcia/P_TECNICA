@@ -11,7 +11,7 @@ namespace P_TECNICA.Controllers
 {
     public class UsuariosController : Controller
     {
-        private readonly pruebaContext _context;
+        readonly pruebaContext _context;
 
         public UsuariosController(pruebaContext context)
         {

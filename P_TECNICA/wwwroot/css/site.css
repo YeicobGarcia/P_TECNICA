@@ -15,9 +15,16 @@ html, body {
 #cardReg {
     height: 550px;
     margin-top: auto;
-    margin-bottom: auto;
+    padding-bottom: 0px;
     width: 450px;
     background-color: rgba(0,0,0,0.5) !important;
+}
+
+th{
+    margin-top: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    color: midnightblue;
 }
 
 .card {

@@ -1,0 +1,134 @@
+﻿@model P_TECNICA.Models.Empleado
+
+@{
+    ViewData["Title"] = "Details_E";
+}
+
+<div class="card-responsive bg-gradient ">
+
+    <div class="card-header">
+        <div class="row">
+
+                <div class="col-auto">
+                <h1 class="text-white-50 fw-bold">@Html.DisplayFor(model => model.NombreE)</h1>
+                </div>
+                <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+                    <div class="d-md-flex justify-content-center  align-models-center text-center">
+                        <button>
+                        <a asp-action="Index" class="btn btn-light align-content-end">Regresar</a>
+                        </button>
+                    </div>
+                </div>
+             </div>
+    </div>
+    <div class="card-body">
+
+        <div class="bg-gradient rounded h-100 p-0">
+            <div class="table-responsive">
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th>
+                                <strong>Id</strong>
+                            </th>
+                            <th>
+                                <strong>Nombre</strong>
+                            </th>
+                            <th>
+                                <strong>DPI</strong>
+                            </th>
+                            <th>
+                                <strong>#Hijos</strong>
+                            </th>
+                            <th>
+                                <strong>Salario Base</strong>
+                            </th>
+                            <th>
+                                <strong>Registrado por</strong>
+                            </th>
+                            <th>
+                                <strong>Fecha de Registro</strong>
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="text-white">
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(model => model.idEmpleados)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.NombreE)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.DPI)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.Hijos)
+                                </td>
+                                <td>
+                                    Q.@Html.DisplayFor(model => model.SalarioB)
+                                </td>
+                                <td>
+                                @ViewData["userCreate"]
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(model => model.fechaUpdate)
+                                </td>
+
+                            </tr>
+
+                        <tr>
+                            <th>
+                                <strong>Bono Decreto</strong>
+                            </th>
+                            <th>
+                                <strong>Bono de Paternidad</strong>
+                            </th>
+                            <th>
+                                <strong>IGSS</strong>
+                            </th>
+                            <th>
+                                <strong>IRTRA</strong>
+                            </th>
+                            <th>
+                                <strong>Salario Total</strong>
+                            </th>
+                            <th>
+                                <strong>Salario Liquido</strong>
+                            </th>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                @ViewData["BonoD"]
+                            </td>
+                            <td>
+                                @ViewData["BonoP"]
+                            </td>
+                            <td>
+                                @ViewData["IGGS"]
+                            </td>
+                            <td>
+                                @ViewData["IRTRA"]
+                            </td>
+                            <td>
+                                @ViewData["SalarioT"]
+                            </td>
+                            <td>
+                                @ViewData["SalarioL"]
+                            </td>
+                            
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit_e" class="btn btn-success align-content-center" asp-route-id="@Model?.idEmpleados">Editar Registro</a>
+    </div>
+</div>
