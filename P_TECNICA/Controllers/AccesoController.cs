@@ -104,7 +104,7 @@ namespace P_TECNICA.Controllers
 			}
             else
             {
-				//Session["usuario"] = oUsuario;
+				Session["usuario"] = oUsuario;
 				return RedirectToAction("Index", "Usuarios");
 			}
 
